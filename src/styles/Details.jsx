@@ -4,8 +4,13 @@ export const StyledDetails = styled.div`
   #dark-details {
     background-color: hsl(207, 26%, 17%);
   }
+  h2 {
+    min-width: 250px;
+  }
   .error {
     color: black;
+    margin-top: 15px;
+    margin-left: 10px;
   }
   .error-container {
     height: 50vh;
@@ -13,6 +18,7 @@ export const StyledDetails = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
   }
   .content {
     padding-bottom: 20px;
@@ -47,7 +53,6 @@ export const StyledDetails = styled.div`
     flex-direction: column;
   }
   .bottom {
-    margin-left: 20px;
     min-width: 220px;
   }
   .top {
@@ -88,7 +93,8 @@ export const StyledDetails = styled.div`
       align-items: center;
     }
   }
-  @media only screen and (min-width: 820px) {
+  @media only screen and (min-width: 900px) {
+    height: 100vh;
     width: 100vw;
     overflow-x: scroll;
     padding: 0 20px;
@@ -98,7 +104,7 @@ export const StyledDetails = styled.div`
     }
     .country-details {
       margin-top: -20px;
-      padding-top: 20px;
+      padding-top: 50px;
       width: 100vw;
       min-height: 50vh;
       display: flex;
@@ -108,19 +114,23 @@ export const StyledDetails = styled.div`
     }
     .content {
       min-width: 300px;
-      margin-left: 50px;
+      margin-left: 40px;
     }
     .top-bottom {
-      min-width: 400px;
+      min-width: 450px;
       max-width: 500px;
       padding-right: 30px;
     }
     .flag {
       min-width: 300px;
-      max-width: 500px;
+      max-width: 400px;
       max-height: 200px;
       margin-right: 30px;
-      margin-left: 60px;
+      margin-left: -10px;
+      padding-left: 45px;
+    }
+    .bottom {
+      margin-left: 20px;
     }
     @media only screen and (min-width: 1100px) {
       overflow-x: hidden;

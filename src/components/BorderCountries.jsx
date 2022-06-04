@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyledContainer } from "../styles/BorderCountries";
 import { StyledGrid } from "../styles/BorderCountries";
 
-function BorderCountries({ code, className, id }) {
+function BorderCountries({ code, className, id, dark }) {
   const [data, setData] = useState([]);
   let arr;
   if (code[0].hasOwnProperty("borders")) {
@@ -25,14 +25,20 @@ function BorderCountries({ code, className, id }) {
       <span className="bold">Borders: </span>
       {data.length > 0 ? (
         <StyledGrid className="grid">
-          {data.map((item, index) => {
-            return (
-              <StyledContainer id={id} key={index}>
-                {" "}
-                {item.name.common}
-              </StyledContainer>
-            );
-          })}
+          {data
+            .filter((item, index) => {
+              return index <= 2;
+            })
+            .map((element, index) => {
+              return (
+                <StyledContainer id={id} key={index}>
+                  {" "}
+                  <a id={dark && "dark_link"} href={`/${element.cca2}`}>
+                    {element.name.common}
+                  </a>
+                </StyledContainer>
+              );
+            })}
         </StyledGrid>
       ) : (
         "None"

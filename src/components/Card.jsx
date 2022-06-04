@@ -38,7 +38,7 @@ function Card({ dark, input, value }) {
               }
             })
             .map((country_data, index) => (
-              <Link className="link" to={`/${country_data.name.common}`}>
+              <Link className="link" to={`/${country_data.cca2}`}>
                 <motion.div
                   initial={{
                     opacity: 0,
@@ -78,9 +78,9 @@ function Card({ dark, input, value }) {
       ) : (
         <div className="error-container">
           <CircularIndeterminate />
-          <h1 className="error" id={dark && "dark-loading"}>
+          <span className="error" id={dark && "dark-loading"}>
             Loading...
-          </h1>
+          </span>
         </div>
       )}
     </CardGrid>

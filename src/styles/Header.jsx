@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  #dark_link {
+    color: white;
+  }
   height: 4rem;
   display: flex;
   align-items: center;

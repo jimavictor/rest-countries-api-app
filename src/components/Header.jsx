@@ -3,7 +3,9 @@ import { StyledHeader } from "../styles/Header";
 function Header({ dark, setDarkMode }) {
   return (
     <StyledHeader id={dark && "dark_header"}>
-      <span className="question">Where in the world?</span>
+      <span className="question">
+        <a id={dark && "dark_link"} href="/">Where in the world?</a>
+      </span>
       <span className="toggle_mode">
         <span
           onClick={() => {

@@ -11,7 +11,7 @@ function Details({ dark }) {
 
   const fetchDetails = async () => {
     const response = await fetch(
-      `https://restcountries.com/v3/name/${country}`
+      `https://restcountries.com/v3.1/alpha/${country}`
     );
     const detail = await response.json();
     setCountryData(detail);
@@ -102,9 +102,7 @@ function Details({ dark }) {
                           <span className="languages">
                             <span className="title">
                               <span className="bold">Languages: </span>
-                              {new Intl.DisplayNames(["en"], {
-                                type: "language",
-                              }).of(Object.entries(data.languages)[0][0])}
+                              {Object.values(data.languages)[0]}
                             </span>
                           </span>
                         </div>
@@ -113,6 +111,7 @@ function Details({ dark }) {
                         id={dark && "dark-container"}
                         className="border"
                         code={countryData}
+                        dark={dark}
                       />
                     </div>
                   </div>
@@ -123,9 +122,9 @@ function Details({ dark }) {
         ) : (
           <div className="error-container">
             <CircularIndeterminate />
-            <h1 className="error" id={dark && "dark-loading"}>
+            <span className="error" id={dark && "dark-loading"}>
               Loading...
-            </h1>
+            </span>
           </div>
         )}
       </div>

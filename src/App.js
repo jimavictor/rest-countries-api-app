@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Details from "./pages/Details";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -10,8 +10,15 @@ function App() {
   const [input, setInput] = useState("");
   const [option, setOption] = useState("Filter by Region");
 
+  useEffect(() => {
+    let darkMode = localStorage.getItem("dark-mode");
+    if (darkMode == "true") {
+      setDark(true);
+    }
+  }, []);
   const setDarkMode = () => {
     setDark(!dark);
+    localStorage.setItem("dark-mode", (!dark).toString());
   };
   const setInputValue = (e) => {
     setInput(e.currentTarget.value);

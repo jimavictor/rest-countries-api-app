@@ -4,8 +4,8 @@ export const StyledOptions = styled.div`
   .select {
     width: 200px;
     padding: 5px;
+    margin-top: 6px;
     background-color: white;
-    padding-left: 10px;
     border: 1px solid black;
     border-radius: 4px;
     border-color: transparent;

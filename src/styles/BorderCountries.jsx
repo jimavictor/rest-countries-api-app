@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.span`
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  #dark_link {
+    color: white;
+  }
+  width: fit-content;
   padding: 5px 10px;
   margin-top: -5px;
   text-align: center;
@@ -8,9 +16,7 @@ export const StyledContainer = styled.span`
 `;
 
 export const StyledGrid = styled.div`
-  min-width: 20vw;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  grid-row-gap: 15px;
-  grid-column-gap: 9px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
 `;

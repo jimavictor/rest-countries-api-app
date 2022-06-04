@@ -10,6 +10,8 @@ export const CardGrid = styled.div`
   }
   .error {
     color: black;
+    margin-top: 15px;
+    margin-left: 10px;
   }
   #dark-loading {
     color: white;
